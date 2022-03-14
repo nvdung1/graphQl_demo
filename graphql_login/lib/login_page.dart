@@ -33,7 +33,6 @@ class _LoginPageState extends State<LoginPage> {
    }
   @override
   Widget build(BuildContext context) {
-    //print(isLoginFalse);
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -85,7 +84,6 @@ class _LoginPageState extends State<LoginPage> {
           ),
           onPressed: (){
               onSub();
-            //print(isLoginFalse);
           },
           child: const Text("ĐĂNG NHẬP",style: TextStyle(fontSize: 15, fontFamily: 'UTM', fontWeight: FontWeight.w400,color: Color.fromRGBO(51, 51, 51, 1))),
         ),

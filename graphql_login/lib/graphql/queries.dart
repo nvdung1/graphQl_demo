@@ -14,4 +14,3 @@ class Queries{
 }""";
  }
 }
-//User(name: $userName, id: $password)

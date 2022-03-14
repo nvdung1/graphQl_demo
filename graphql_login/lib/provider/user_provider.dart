@@ -12,9 +12,7 @@ class UserProvider with ChangeNotifier{
   Future fetchProfile(String userName, String password) async {
     GraphQLClient _client = Config().graphQLClient();
     QueryResult result = await _client.query(QueryOptions( document: gql(query.queryUser(userName, password))));
-    // if(result.isLoading){
-    //   isLoading=!isLoading;
-    // }
+
     if (result.hasException) {
       isLogin= false;
     } else if (!result.hasException) {
