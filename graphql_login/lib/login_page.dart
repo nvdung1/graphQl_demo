@@ -28,6 +28,7 @@ class _LoginPageState extends State<LoginPage> {
        if(Provider.of<UserProvider>(context,listen: false).isLogin){
          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomePage()));
        }
+       // // TODO:(dungnv): use provider instead of setState
        setState(() {
          isLoginFalse= !Provider.of<UserProvider>(context,listen: false).isLogin;
        });
