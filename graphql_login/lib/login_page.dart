@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:graphql_login/models/user.dart';
-import 'package:provider/provider.dart';
 import 'package:graphql_login/provider/user_provider.dart';
+import 'package:provider/provider.dart';
+
 import 'graphql/queries.dart';
 import 'homepage.dart';
-
+// TODO:(dungnv): install lint package and fix all warning
+// source: https://pub.dev/packages/flutter_lints
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -33,6 +35,7 @@ class _LoginPageState extends State<LoginPage> {
    }
   @override
   Widget build(BuildContext context) {
+    // TODO:(dungnv): remove print or unncessary comment, use log instead if need
     //print(isLoginFalse);
     return Scaffold(
       body: SafeArea(
