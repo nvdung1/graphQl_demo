@@ -10,7 +10,6 @@ class User {
   factory User.fromJson(dynamic jsonObject){
     final user = jsonObject['User'];
 
-    // TODO(dungnv): should enter here before a block code or condition to clear 
     return User(
         name: user['name'],
         id: user['id'],

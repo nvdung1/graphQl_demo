@@ -10,7 +10,6 @@ void main() {
     ],
       child: const MyApp(),
     )
-
   );
 }
 
@@ -25,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LoginPage(),
+      home: LoginPage(),
     );
   }
 }
