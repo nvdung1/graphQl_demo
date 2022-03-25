@@ -1,0 +1,7 @@
+mutation destroySession($clientMutationId: String!) {
+  destroySession(input: { clientMutationId: $clientMutationId }) {
+    session {
+      userId
+    }
+  }
+}

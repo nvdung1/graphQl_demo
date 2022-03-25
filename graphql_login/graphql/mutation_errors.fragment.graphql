@@ -1,0 +1,5 @@
+fragment MutationErrorsField on AttributeError {
+  path
+  message
+  subject
+}

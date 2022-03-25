@@ -1,16 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:graphql_login/login_page.dart';
+import 'package:flutter_state_notifier/flutter_state_notifier.dart';
+import 'package:graphql_login/home/home_state_notifier.dart';
+import 'package:graphql_login/login/login_screen.dart';
+import 'package:graphql_login/login/login_state_notifier.dart';
 import 'package:graphql_login/provider/user_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(
-    MultiProvider(providers: [
-      ChangeNotifierProvider(create: (_) =>UserProvider())
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(
+        create: (_) => UserProvider(),
+      ),
+      StateNotifierProvider(
+        create: (_) => LoginStateNotifier(),
+      ),
+      StateNotifierProvider(
+        create: (_) => HomeStateNotifier(),
+      )
     ],
-      child: const MyApp(),
-    )
-  );
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -24,7 +34,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginPage(),
+      home: const LoginScreen(),
     );
   }
 }

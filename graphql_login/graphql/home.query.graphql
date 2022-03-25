@@ -1,0 +1,206 @@
+query home {
+  residentHome {
+    userContract {
+      chargeRent
+      chargeManagement
+      chargeParking
+      chargeAdditional
+      resident {
+        chargeUser {
+          shops {
+            nodes {
+              onSunday
+              onMonday
+              onTuesday
+              onWednesday
+              onThursday
+              onFriday
+              onSaturday
+              openFromHhmmOnSunday
+              openUntilHhmmOnSunday
+              openFromHhmmOnMonday
+              openUntilHhmmOnMonday
+              openFromHhmmOnTuesday
+              openUntilHhmmOnTuesday
+              openFromHhmmOnWednesday
+              openUntilHhmmOnWednesday
+              openFromHhmmOnThursday
+              openUntilHhmmOnThursday
+              openFromHhmmOnFriday
+              openUntilHhmmOnFriday
+              openFromHhmmOnSaturday
+              openUntilHhmmOnSaturday
+              name
+              tel
+            }
+          }
+        }
+      }
+      property {
+        id
+        name
+        building {
+          name
+          images(first: 1) {
+            nodes {
+              id
+              url
+            }
+          }
+          slider(sessionClass: ResidentSlider) {
+            id
+            timer
+            banners {
+              nodes {
+                id
+                url
+                limitedTime
+                image {
+                  url
+                }
+                attachment {
+                  url
+                }
+                imageKind {
+                  id
+                  name
+                }
+                displayMethod {
+                  id
+                  name
+                }
+                enabled
+              }
+            }
+          }
+          prefecture {
+            name
+          }
+          city {
+            name
+          }
+          address
+          chargeBranchShop {
+            __typename
+            ... on BranchShop {
+              name
+              tel
+              onSunday
+              onMonday
+              onTuesday
+              onWednesday
+              onThursday
+              onFriday
+              onSaturday
+              openFromHhmmOnSunday
+              openUntilHhmmOnSunday
+              openFromHhmmOnMonday
+              openUntilHhmmOnMonday
+              openFromHhmmOnTuesday
+              openUntilHhmmOnTuesday
+              openFromHhmmOnWednesday
+              openUntilHhmmOnWednesday
+              openFromHhmmOnThursday
+              openUntilHhmmOnThursday
+              openFromHhmmOnFriday
+              openUntilHhmmOnFriday
+              openFromHhmmOnSaturday
+              openUntilHhmmOnSaturday
+              managerUser {
+                name
+              }
+              additionalBusinessHours {
+                additionalDate
+                open
+                openFromHhmm
+                openUntilHhmm
+              }
+              prefecture {
+                name
+              }
+              city {
+                name
+              }
+              address1
+              address2
+            }
+            ... on HeadquartersShop {
+              name
+              tel
+              onSunday
+              onMonday
+              onTuesday
+              onWednesday
+              onThursday
+              onFriday
+              onSaturday
+              openFromHhmmOnSunday
+              openUntilHhmmOnSunday
+              openFromHhmmOnMonday
+              openUntilHhmmOnMonday
+              openFromHhmmOnTuesday
+              openUntilHhmmOnTuesday
+              openFromHhmmOnWednesday
+              openUntilHhmmOnWednesday
+              openFromHhmmOnThursday
+              openUntilHhmmOnThursday
+              openFromHhmmOnFriday
+              openUntilHhmmOnFriday
+              openFromHhmmOnSaturday
+              openUntilHhmmOnSaturday
+              managerUser {
+                name
+              }
+              additionalBusinessHours {
+                additionalDate
+                open
+                openFromHhmm
+                openUntilHhmm
+              }
+              prefecture {
+                name
+              }
+              city {
+                name
+              }
+              address1
+              address2
+            }
+          }
+        }
+      }
+    }
+  }
+  accountQuestionnaires(states: [UNREAD, READ]) {
+    nodes {
+      id
+    }
+  }
+  accountBulletins(first: 3, order: { by: "updatedAt", direction: "desc" }) {
+    nodes {
+      id
+      seen
+      title
+      content
+      visibleFrom
+      updatedAt
+      attachments(first: 1) {
+        nodes {
+          id
+        }
+      }
+    }
+  }
+}
+
+query sliderImageType {
+  imageKinds {
+    id
+    name
+  }
+
+  displayMethods {
+    id
+    name
+  }
+}

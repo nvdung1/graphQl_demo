@@ -1,0 +1,13 @@
+mutation createSession($loginId: String!, $password: String!) {
+  createSession(
+    input: { loginId: $loginId, password: $password, sessionClass: ACCOUNT }
+  ) {
+    session {
+      token
+      userId
+    }
+    errors {
+      ...MutationErrorsField
+    }
+  }
+}
